@@ -6,12 +6,10 @@
   height: 40px;
   text-align: center;
   font-size: 1.5em;
-  /*hides the text*/
   text-indent:-5000px;  
 }
 
 .showen {
-  background-color: black;
   background-image: url("../img/back.png");
   background-size: 100%;
 }
@@ -27,36 +25,27 @@
   background-size: 100%;
 }
 
-/*forced this properties to contradict bootstraps design on the table*/
 .cellBorder {
   border: 1px solid white;
 }
 
-/*flexbox bar holding 4 items*/
 .container-bar {
-  /*border: 1px solid black;*/
-  /*flex things*/
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-/*flexbox bottom bar*/
 .container-bar2 {
-  /*border: 1px solid black;*/
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-
-/*timer container*/
 .timerContainer {
   display: flex;
-  /*border: 1px solid black;*/
 }
-/*timer icon inside bot bar*/
+
 .timerIcon {
   margin-top: 5px;
   margin-right: 5px;
@@ -67,13 +56,10 @@
   display: flex;
 }
 
-/*score container*/
 .scoreContainer {
   display: flex;
-  /*visibility: collapse;*/
-  /*border: 1px solid black;*/
 }
-/*these two are score items within bar2 container*/
+
 .scoreIcon {
   margin-top: 5px;
 }
@@ -82,9 +68,7 @@
   display: flex;
 }
 
-
 .container-bar3 {
-  /*border: 1px solid black;*/
   width: 100%;
   display: flex;
   justify-content: center;
@@ -95,33 +79,24 @@
   visibility: collapse;
 }
 
-/*flexbox items within flex bar*/
 .container-item {
-  /*border: 1px solid black;*/
   width: 80px;
-  /*flex things*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
 
-/*flexbox holding table and bar*/
 .gameContainer {
-  /*border: 1px solid black;*/
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
 }
 
-
-
 body {
   display: flex;
-  /*all body dives in a column direction*/
   flex-direction: column;
-  /*centeres them in the column direciton*/
   align-items: center;
 }
 
@@ -132,7 +107,6 @@ body {
 
 .item {
     border: 1px solid grey;
-    /*The next row is to solve the 1px bottom border bug in chrome */
     border-bottom: 1px solid grey;
     width: 20%;
     height: 250px;

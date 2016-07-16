@@ -9,35 +9,31 @@
     <body onload="initGame();timerToggle();">
         <header>
             <h1>Minesweeper Game!</h1>
-            
         </header> 
-        <!--a game container holding the game board item & header container-->
+
+        <!--a game container holding the game board item, header container and footer-->
         <div class="gameContainer">
-            <!--within game container, a header container holding counters-->
             <div class="container-bar">
-                <!--the header container-->
                 <div class="container-item container-item1">
-                    <img class="mineSymbol" src="img/flag.png" alt=""><h2 class="markedCounter">0</h2>
+                    <img class="mineSymbol" src="img/flag2.png" alt=""><h2 class="markedCounter">0</h2>
                 </div>
-                <!--the items within header container-->
                 <div class="container-item container-item2">
                     <img class="mineSymbol" src="img/mine.png" alt=""><h2 class="minesCounter minesReminder"></h2>
                 </div>
             </div>
-            <!--the game item in gameContainer-->
+
+            <!--The game item in gameContainer-->
             <table border="2">
                 <tbody class="elBoard"></tbody>
             </table>
             
-            <!--the footer container-->
+            <!--The lower counters container-->
             <div class="container-bar2">
-                <!--timer container holds counter and icon-->
+
                 <div class="timerContainer">
-                    <!--the timing icon within footer container-->
                     <div class="timerIcon">
                         <img class="mineSymbol" src="img/hourglass.jpg" alt="mine icon">
                     </div>
-                    <!--Timer counter-->
                     <div class="clock">
                         <div class="cMins">
                             <label id="cMinutes">00</lable>
@@ -50,13 +46,11 @@
                         </div>
                     </div>
                 </div>
-                <!--score container holds counter and icon-->
+
                 <div class="scoreContainer">
-                    <!--the score icon within footer conatiner -->
                     <div class="scoreIcon">
                         <img class="mineSymbol" src="img/score.jpg" alt="score icon">
                     </div>
-                    <!--Score counter-->
                     <div class="score">
                         <div class="sMins">
                             <label id="sMinutes">00</lable>
