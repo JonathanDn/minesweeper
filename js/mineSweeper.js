@@ -1,5 +1,24 @@
 'use strict'
 
+var gCurrScore;
+var gBoard = [];
+var gLevel = {
+    SIZE: 8,
+    MINES: 15
+};
+var gState = {
+    score: 0,
+    marked: 0
+}
+var gCellExpandedCounter = 0;
+var gIsGameOver = false;
+var gIsGameWon = false;
+var isTimerOn = false;
+var unsetTime = false;
+var MINE = '*';
+var EMPTY = ' ';
+var MAXSHOWNCELLS = (gLevel.SIZE * gLevel.SIZE) - gLevel.MINES;
+
 function initGame() {
     gBoard = buildBoard();
     renderBoard(gBoard);
@@ -23,7 +42,7 @@ function getRandomMines() {
         if (gBoard[randI][randJ] !== MINE) {
             mineCount++;
             gBoard[randI][randJ] = MINE;
-        } 
+        }
         randI = parseInt(Math.random() * gLevel.SIZE);
         randJ = parseInt(Math.random() * gLevel.SIZE);
     }
@@ -212,7 +231,7 @@ function timerToggle() {
 }
 
 function checkAbsoluteBestScore() {
-    var bestScore = localStorage.getItem('bScore');   
+    var bestScore = localStorage.getItem('bScore');
     var elScoreCounter = document.querySelector('.score');
     if (bestScore === null) elScoreCounter.innerText = '00:00';
     else elScoreCounter.innerText = bestScore;
@@ -220,34 +239,15 @@ function checkAbsoluteBestScore() {
         var elMins = document.getElementById('cMinutes').innerHTML;
         var elSecs = document.getElementById('cSeconds').innerHTML;
         var elScoreCounter = document.querySelector('.score');
-        elScoreCounter.innerHTML =  elMins + ':' + elSecs;
+        elScoreCounter.innerHTML = elMins + ':' + elSecs;
         localStorage.setItem('bScore', gCurrScore);
     } else {
         var gCurrScoreArr = gCurrScore.split(':');
         var bestScoreArr = bestScore.split(':');
-        if ( +gCurrScoreArr[0] < +bestScoreArr[0] || +gCurrScoreArr[1] <  +bestScoreArr[1]) {
+        if (+gCurrScoreArr[0] < +bestScoreArr[0] || +gCurrScoreArr[1] < +bestScoreArr[1]) {
             localStorage.setItem('bScore', gCurrScore);
             elScoreCounter.innerHTML = localStorage.getItem('bScore');
             elScoreCounter.style = "font-weight:bold;"
         }
     }
 }
-
-var gCurrScore;
-var gBoard = [];
-var gLevel = {
-    SIZE: 8,
-    MINES: 15
-};
-var gState = {
-    score: 0,
-    marked: 0
-}
-var gCellExpandedCounter = 0;
-var gIsGameOver = false;
-var gIsGameWon = false;
-var isTimerOn = false;
-var unsetTime = false;
-var MINE = '*';
-var EMPTY = ' ';
-var MAXSHOWNCELLS = (gLevel.SIZE * gLevel.SIZE) - gLevel.MINES;
